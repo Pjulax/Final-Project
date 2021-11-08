@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2afdcd30-3abc-42d2-bf1c-0c240dc4d163" name="Default Changelist" comment="" />
+    <list default="true" id="2afdcd30-3abc-42d2-bf1c-0c240dc4d163" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ordersystem/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/OrdersystemApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/test/java/pl/pp/store/ordersystem/OrdersystemApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +25,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Structure" value="false" />
+      </map>
+    </option>
   </component>
   <component name="ProjectId" id="20bN3PTCcgJ9hKiyTCCZFq7PXxq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -79,6 +104,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="registry" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.registry.RegistryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ServicediscoveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="servicediscovery" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.pp.store.servicediscovery.ServicediscoveryApplication" />
@@ -103,7 +135,7 @@
       <option name="presentableId" value="Default" />
       <updated>1636309127680</updated>
       <workItem from="1636309128791" duration="5680000" />
-      <workItem from="1636378926659" duration="691000" />
+      <workItem from="1636378926659" duration="1554000" />
     </task>
     <servers />
   </component>
