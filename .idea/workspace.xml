@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2afdcd30-3abc-42d2-bf1c-0c240dc4d163" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ordersystem/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/OrdersystemApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/test/java/pl/pp/store/ordersystem/OrdersystemApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +71,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServicediscoveryApplication">
+  <component name="RunManager" selected="Spring Boot.StoreApplication">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -111,20 +106,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServicediscoveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="servicediscovery" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.pp.store.servicediscovery.ServicediscoveryApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="StoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="store" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.pp.store.store.StoreApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.OrdersystemApplication" />
+      <item itemvalue="Spring Boot.RegistryApplication" />
+      <item itemvalue="Spring Boot.StoreApplication" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -135,7 +131,7 @@
       <option name="presentableId" value="Default" />
       <updated>1636309127680</updated>
       <workItem from="1636309128791" duration="5680000" />
-      <workItem from="1636378926659" duration="1554000" />
+      <workItem from="1636378926659" duration="2383000" />
     </task>
     <servers />
   </component>

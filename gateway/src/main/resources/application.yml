@@ -7,10 +7,16 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: service
+        - id: ordersystem
           uri: lb://ordersystem
           predicates:
             - Path=/ordersystem/**
+          filters:
+            - StripPrefix=1
+        - id: store
+          uri: lb://store
+          predicates:
+            - Path=/store/**
           filters:
             - StripPrefix=1
         - id: registry
