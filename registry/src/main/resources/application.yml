@@ -6,6 +6,8 @@ server:
   port: 8761
 
 eureka:
+  instance:
+    hostname: ${DOCKER_HOST:localhost}
   client:
-    registerWithEureka: true
+    registerWithEureka: false
     fetchRegistry: false

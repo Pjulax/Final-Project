@@ -1,0 +1,43 @@
+version: '3'
+services:
+  registry:
+    build: ./registry
+    image: fp-store-registry:latest
+    container_name: registry
+    expose:
+      - "8761"
+  ordersystem-service:
+    build: ./ordersystem
+    image: fp-store-ordersystem:latest
+    container_name: ordersystem-service
+    expose:
+      - "8762"
+    depends_on:
+      - registry
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://registry:8761/eureka
+  store-service:
+    build: ./store
+    image: fp-store-store:latest
+    container_name: store-service
+    expose:
+      - "8763"
+    depends_on:
+      - registry
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://registry:8761/eureka
+  gateway:
+    build: ./gateway
+    image: fp-store-gateway:latest
+    container_name: gateway
+    ports:
+      - "8760:8760"
+    depends_on:
+      - registry
+      - ordersystem-service
+      - store-service
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://registry:8761/eureka
