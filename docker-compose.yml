@@ -1,43 +1,62 @@
-version: '3'
+version: '3.7'
 services:
+
   registry:
-    build: ./registry
-    image: fp-store-registry:latest
-    container_name: registry
+    build:
+      context: ./registry
+    image: fp-registry:latest
+    hostname: registry
     expose:
       - "8761"
+    networks:
+      services-network-01:
+        aliases:
+          - registry
+
+
   ordersystem-service:
-    build: ./ordersystem
-    image: fp-store-ordersystem:latest
-    container_name: ordersystem-service
+    build:
+      context: ./ordersystem
+    hostname: ordersystem-service
     expose:
       - "8762"
+    networks:
+      services-network-01:
+        aliases:
+          - ordersystem-service
     depends_on:
       - registry
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://registry:8761/eureka
+
   store-service:
-    build: ./store
-    image: fp-store-store:latest
-    container_name: store-service
+    build:
+      context: ./store
+    hostname: store-service
     expose:
       - "8763"
+    networks:
+      services-network-01:
+        aliases:
+          - store-service
     depends_on:
       - registry
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://registry:8761/eureka
+
+
   gateway:
-    build: ./gateway
-    image: fp-store-gateway:latest
-    container_name: gateway
+    build:
+      context: ./gateway
+    hostname: gateway
     ports:
       - "8760:8760"
+    networks:
+      services-network-01:
+        aliases:
+          - gateway
     depends_on:
-      - registry
       - ordersystem-service
       - store-service
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://registry:8761/eureka
+      - registry
+
+networks:
+  services-network-01:
+    name: services-network-01
+    driver: bridge

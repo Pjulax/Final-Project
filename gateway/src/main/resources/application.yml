@@ -7,18 +7,18 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: ordersystem
-          uri: lb://ordersystem
+        - id: ordersystem-service
+          uri: lb://ordersystem-service
           predicates:
-            - Path=/ordersystem/**
+            - Path=/ordersystem-service/**
           filters:
             - StripPrefix=1
-        - id: store
-          uri: lb://store
-          predicates:
-            - Path=/store/**
-          filters:
-            - StripPrefix=1
+#        - id: store
+#          uri: lb://store
+#          predicates:
+#            - Path=/store/**
+#          filters:
+#            - StripPrefix=1
         - id: registry
           uri: lb://registry
           predicates:
@@ -35,12 +35,18 @@ info:
     name: ${spring.application.name}
 
 eureka:
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      zone: zone1
   client:
-    registerWithEureka: true
-    serviceUrl:
-      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
-    healthcheck:
-      enabled: true
+    prefer-same-zone-eureka: true
+    register-with-eureka: true
+    region: region1
+    service-url:
+      zone1: http://registry:8761/eureka/
+    availability-zones:
+      region1: zone1
 
 management:
   endpoints:
