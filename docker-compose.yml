@@ -12,7 +12,30 @@ services:
       services-network-01:
         aliases:
           - registry
+    healthcheck:
+      test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
 
+  PostgreSQL:
+    image: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      services-network-01:
+        aliases:
+          - PostgreSQL
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   ordersystem-service:
     build:
@@ -25,7 +48,15 @@ services:
         aliases:
           - ordersystem-service
     depends_on:
-      - registry
+      registry:
+        condition: service_healthy
+      PostgreSQL:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://PostgreSQL:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   store-service:
     build:
@@ -38,8 +69,15 @@ services:
         aliases:
           - store-service
     depends_on:
-      - registry
-
+      registry:
+        condition: service_healthy
+      PostgreSQL:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://PostgreSQL:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   gateway:
     build:
