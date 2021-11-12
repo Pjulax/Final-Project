@@ -13,12 +13,12 @@ spring:
             - Path=/ordersystem-service/**
           filters:
             - StripPrefix=1
-#        - id: store
-#          uri: lb://store
-#          predicates:
-#            - Path=/store/**
-#          filters:
-#            - StripPrefix=1
+        - id: store-service
+          uri: lb://store-service
+          predicates:
+            - Path=/store-service/**
+          filters:
+            - StripPrefix=1
         - id: registry
           uri: lb://registry
           predicates:
