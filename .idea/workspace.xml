@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2afdcd30-3abc-42d2-bf1c-0c240dc4d163" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloFeign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloFeignImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/StoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/StoreApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -63,14 +65,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.google.cloudcode.ide_session_index" value="20211112_0000" />
+    <property name="com.google.cloudcode.ide_session_index" value="20211114_0000" />
     <property name="jdk.selected.JAVA_MODULE" value="sapmachine-11" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -254,7 +256,9 @@
       <workItem from="1636476279896" duration="380000" />
       <workItem from="1636477117784" duration="4410000" />
       <workItem from="1636481699398" duration="13554000" />
-      <workItem from="1636746513586" duration="6690000" />
+      <workItem from="1636746513586" duration="7058000" />
+      <workItem from="1636806966331" duration="1575000" />
+      <workItem from="1636928353517" duration="3454000" />
     </task>
     <servers />
   </component>

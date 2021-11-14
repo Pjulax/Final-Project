@@ -6,6 +6,7 @@ services:
       context: ./registry
     image: fp-registry:latest
     hostname: registry
+
     expose:
       - "8761"
     networks:
