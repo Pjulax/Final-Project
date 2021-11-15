@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2afdcd30-3abc-42d2-bf1c-0c240dc4d163" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloFeign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloFeignImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/StoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/StoreApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +61,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.google.cloudcode.ide_session_index" value="20211114_0000" />
+    <property name="com.google.cloudcode.ide_session_index" value="20211115_0001" />
     <property name="jdk.selected.JAVA_MODULE" value="sapmachine-11" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -98,7 +94,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+  <component name="RunManager" selected="Docker.gateway/Dockerfile">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -166,7 +162,6 @@
         <settings>
           <option name="imageTag" value="fp-store-gateway" />
           <option name="buildCliOptions" value="" />
-          <option name="buildOnly" value="true" />
           <option name="command" value="" />
           <option name="containerName" value="gateway" />
           <option name="entrypoint" value="" />
@@ -235,8 +230,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.gateway/Dockerfile" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.registry: Compose Deployment" />
       </list>
     </recent_temporary>
@@ -258,7 +253,9 @@
       <workItem from="1636481699398" duration="13554000" />
       <workItem from="1636746513586" duration="7058000" />
       <workItem from="1636806966331" duration="1575000" />
-      <workItem from="1636928353517" duration="3454000" />
+      <workItem from="1636928353517" duration="4262000" />
+      <workItem from="1636933519097" duration="7000" />
+      <workItem from="1636992652097" duration="2956000" />
     </task>
     <servers />
   </component>
