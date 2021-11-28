@@ -6,20 +6,19 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Data
 @Entity
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="stores")
-public class Store {
+@Table(name="supplies")
+public class Supply {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String address;
-    private String code;
-
+    private String from;
+    private Date arrival;
 }

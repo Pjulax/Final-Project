@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2afdcd30-3abc-42d2-bf1c-0c240dc4d163" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Store.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/repository/StoreRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/StoreKeeper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/StoredProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Supplier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Supply.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registry/src/main/java/com/example/registry/RegistryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/registry/src/main/java/com/example/registry/RegistryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Store.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -77,10 +79,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\store\src\main\java\pl\pp\store\store" />
       <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Studia\SemVII\Praca_Inżynierska\FinalProject" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="pl.pp.store.ordersystem" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="pl.pp.store.ordersystem" />
@@ -265,7 +271,7 @@
       <workItem from="1637077355045" duration="1300000" />
       <workItem from="1637155204126" duration="4148000" />
       <workItem from="1637671314474" duration="1192000" />
-      <workItem from="1638135595913" duration="1931000" />
+      <workItem from="1638135595913" duration="5930000" />
     </task>
     <servers />
   </component>
