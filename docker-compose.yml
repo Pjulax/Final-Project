@@ -59,6 +59,12 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    healthcheck:
+      test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
 
   store-service:
     build:
@@ -81,6 +87,12 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    healthcheck:
+      test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
 
   gateway:
     build:
@@ -97,6 +109,12 @@ services:
       - ordersystem-service
       - store-service
       - registry
+    healthcheck:
+      test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
 
 networks:
   services-network-01:
