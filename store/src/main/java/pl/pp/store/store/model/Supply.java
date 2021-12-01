@@ -21,4 +21,6 @@ public class Supply {
     private Long id;
     private String from;
     private Date arrival;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User supplier;
 }

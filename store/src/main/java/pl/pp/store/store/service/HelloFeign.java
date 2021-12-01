@@ -1,4 +1,4 @@
-package pl.pp.store.store;
+package pl.pp.store.store.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;

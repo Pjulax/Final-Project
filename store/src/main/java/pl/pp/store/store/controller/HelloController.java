@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.pp.store.store.HelloFeignImpl;
+import pl.pp.store.store.service.HelloFeignImpl;
 
 @RestController
 @RequestMapping("/hello")

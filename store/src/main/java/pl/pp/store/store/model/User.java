@@ -6,8 +6,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Entity
@@ -23,11 +22,6 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
-    @ManyToMany
-    @JoinTable(
-            name = "users_roles",
-            joinColumns = @JoinColumn(name = "id"),
-            inverseJoinColumns = @JoinColumn(name = "id"))
-    private final Set<Role> roleList = new HashSet<Role>();
-
+    @ElementCollection(fetch = FetchType.LAZY)
+    private List<Role> roles;
 }

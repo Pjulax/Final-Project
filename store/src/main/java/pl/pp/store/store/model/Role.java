@@ -1,21 +1,15 @@
 package pl.pp.store.store.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+public enum Role {
+    ROLE_SUPPLIER("ROLE_SUPPLIER"),
+    ROLE_STOREKEEPER("ROLE_STOREKEEPER");
+    private final String name;
 
-import javax.persistence.*;
+    Role(String name) {
+        this.name = name;
+    }
 
-@Data
-@Entity
-@RequiredArgsConstructor
-@AllArgsConstructor
-@Builder
-@Table(name = "roles")
-public class Role {
-
-    @Id
-    private Long id;
-    private String name;
+    public String getName() {
+        return name;
+    }
 }

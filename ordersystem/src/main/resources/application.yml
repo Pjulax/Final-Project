@@ -1,6 +1,13 @@
 spring:
   application:
     name: ordersystem-service
+  main:
+    banner-mode: "off"
+
+logging:
+  level:
+    org:
+      springframework: error
 
 server:
   port: 8762

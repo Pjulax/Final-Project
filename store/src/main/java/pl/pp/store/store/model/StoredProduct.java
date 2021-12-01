@@ -23,7 +23,5 @@ public class StoredProduct {
     private Article article;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH, optional = false)
     private Store store;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH, optional = false)
-    private Supply supply;
     private Boolean isSupplyAccepted;
 }
