@@ -70,6 +70,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${project.parent.version}</version>
                 <configuration>
                     <excludes>
                         <exclude>
@@ -77,6 +78,22 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.1.4</version>
+                <configuration>
+                    <to>
+                        <image>europe-west3-docker.pkg.dev/final-project-334521/fp-repo/gateway</image>
+                        <tags>${project.version}</tags>
+                    </to>
+                    <container>
+                        <ports>
+                            <port>8760</port>
+                        </ports>
+                    </container>
                 </configuration>
             </plugin>
         </plugins>

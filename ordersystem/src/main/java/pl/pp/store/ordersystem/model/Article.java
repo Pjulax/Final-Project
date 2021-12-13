@@ -1,4 +1,4 @@
-package pl.pp.store.store.model;
+package pl.pp.store.ordersystem.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,16 +12,13 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="stores")
-public class Store {
+@Table(name="articles")
+public class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String address;
     private String code;
-//    @OneToOne(fetch = FetchType.LAZY)
-//    private User storeKeeper;
 
 }

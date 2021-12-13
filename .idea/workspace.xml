@@ -5,22 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2afdcd30-3abc-42d2-bf1c-0c240dc4d163" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/service/RaportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/dto/ProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/dto/StoreDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/dto/StoredProductsListDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/StoredProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/Supply.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/repository/ArticleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/repository/StoreRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/repository/StoredProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raporting/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/raporting/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose-backup.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ordersystem/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ordersystem/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/service/RaportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/service/RaportService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ordersystem/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ordersystem/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloFeign.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/service/HelloFeign.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/HelloFeignImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/service/HelloFeignImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registry/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/registry/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/store/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/StoreKeeper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/StoredProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/StoredProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Supplier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Supply.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Supply.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +70,11 @@
       </map>
     </option>
   </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="ProjectId" id="20bN3PTCcgJ9hKiyTCCZFq7PXxq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -67,7 +83,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ACTIVE_CLOUD_PROJECT_ACCOUNT" value="pawelpo99@gmail.com" />
+    <property name="ACTIVE_CLOUD_PROJECT_ID" value="final-project-334521" />
+    <property name="ACTIVE_CLOUD_PROJECT_NAME" value="final-project" />
+    <property name="ACTIVE_CLOUD_PROJECT_NUMBER" value="435652737267" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -77,21 +98,26 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.google.cloudcode.ide_session_index" value="20211201_0000" />
+    <property name="com.google.cloudcode.ide_session_index" value="20211213_0007" />
     <property name="jdk.selected.JAVA_MODULE" value="sapmachine-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/raporting/src/main/resources" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="google.settings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\store\src\main\java\pl\pp\store\store" />
+      <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\raporting\src\main\resources" />
+      <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\raporting" />
       <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project" />
+      <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\ordersystem\src\main\java\pl\pp\store\ordersystem\model" />
+      <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\store\src\main\java\pl\pp\store\store" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\store\src\main\resources" />
       <recent name="D:\Studia\SemVII\Praca_Inżynierska\FinalProject" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -105,6 +131,7 @@
     <option name="myCommands">
       <command value="mvn clean" />
       <command value="mvn clean package -DskipTests=true" />
+      <command value="mvn compile jib:build" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -114,16 +141,14 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment (1)">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,6 +163,13 @@
     <configuration name="OrdersystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="ordersystem" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.pp.store.ordersystem.OrdersystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RaportingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="raporting" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.pp.store.raporting.RaportingApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -158,9 +190,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose.yml: Compose Deployment (1)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.ordersystem-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="ordersystem-service" />
+            </list>
+          </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
         </settings>
       </deployment>
@@ -245,13 +296,18 @@
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.registry: Compose Deployment" />
       <item itemvalue="Docker.gateway/Dockerfile" />
+      <item itemvalue="Docker.docker-compose.yml.ordersystem-service: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.OrdersystemApplication" />
       <item itemvalue="Spring Boot.RegistryApplication" />
       <item itemvalue="Spring Boot.StoreApplication" />
+      <item itemvalue="Spring Boot.RaportingApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml.ordersystem-service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.gateway/Dockerfile" />
         <item itemvalue="Docker.docker-compose.yml.registry: Compose Deployment" />
@@ -285,7 +341,11 @@
       <workItem from="1638135595913" duration="6368000" />
       <workItem from="1638196029063" duration="1197000" />
       <workItem from="1638298563508" duration="7287000" />
-      <workItem from="1638360369204" duration="2368000" />
+      <workItem from="1638360369204" duration="9448000" />
+      <workItem from="1638829194434" duration="969000" />
+      <workItem from="1638830913424" duration="3952000" />
+      <workItem from="1639001979999" duration="6087000" />
+      <workItem from="1639344139709" duration="9142000" />
     </task>
     <servers />
   </component>

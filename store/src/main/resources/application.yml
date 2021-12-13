@@ -3,6 +3,9 @@ spring:
     name: store-service
   datasource:
     driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
 
 server:
   port: 8763

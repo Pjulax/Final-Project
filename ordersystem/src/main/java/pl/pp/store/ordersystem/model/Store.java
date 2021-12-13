@@ -1,4 +1,4 @@
-package pl.pp.store.store.model;
+package pl.pp.store.ordersystem.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,5 +23,4 @@ public class Store {
     private String code;
 //    @OneToOne(fetch = FetchType.LAZY)
 //    private User storeKeeper;
-
 }

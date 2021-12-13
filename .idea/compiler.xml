@@ -10,6 +10,7 @@
         <module name="registry" />
         <module name="store" />
         <module name="gateway" />
+        <module name="raporting" />
         <module name="ordersystem" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
       <module name="Final-Project" target="1.5" />
       <module name="gateway" target="11" />
       <module name="ordersystem" target="11" />
+      <module name="raporting" target="11" />
       <module name="registry" target="11" />
       <module name="store" target="11" />
     </bytecodeTargetLevel>
@@ -25,6 +27,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="gateway" options="-parameters" />
       <module name="ordersystem" options="-parameters" />
+      <module name="raporting" options="-parameters" />
       <module name="registry" options="-parameters" />
       <module name="store" options="-parameters" />
     </option>

@@ -3,11 +3,13 @@ spring:
     name: ordersystem-service
   main:
     banner-mode: "off"
+  datasource:
+    driver-class-name: org.postgresql.Driver
 
 logging:
   level:
     org:
-      springframework: error
+      springframework: info
 
 server:
   port: 8762
