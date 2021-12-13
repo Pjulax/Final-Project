@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: raporting-service
+  main:
+    banner-mode: "off"
+  datasource:
+    driver-class-name: org.postgresql.Driver
+
+logging:
+  level:
+    org:
+      springframework: info
+
+server:
+  port: 8764
+
+info:
+  app:
+    name: ${spring.application.name}
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      zone: zone1
+  client:
+    prefer-same-zone-eureka: true
+    register-with-eureka: true
+    region: region1
+    service-url:
+      zone1: http://registry:8761/eureka/
+    availability-zones:
+      region1: zone1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - mappings
+          - env
+          - health
+          - info
