@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2afdcd30-3abc-42d2-bf1c-0c240dc4d163" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/dto/ProductDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/dto/StoreDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/dto/StoredProductsListDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/Store.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/StoredProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/Supply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/repository/ArticleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/repository/StoreRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/repository/StoredProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raporting/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/raporting/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordersystem/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ordersystem/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/service/RaportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordersystem/src/main/java/pl/pp/store/ordersystem/service/RaportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordersystem/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ordersystem/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registry/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/registry/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/store/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/java/pl/pp/store/store/model/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/store/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="2afdcd30-3abc-42d2-bf1c-0c240dc4d163" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +49,6 @@
   <component name="ProjectId" id="20bN3PTCcgJ9hKiyTCCZFq7PXxq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -100,7 +70,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.google.cloudcode.ide_session_index" value="20211213_0007" />
     <property name="jdk.selected.JAVA_MODULE" value="sapmachine-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/raporting/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/raporting/src/main/java/pl/pp/store/raporting" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -110,11 +80,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\raporting\src\main\java\pl\pp\store\raporting" />
       <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\raporting\src\main\resources" />
       <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\raporting" />
       <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project" />
       <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\ordersystem\src\main\java\pl\pp\store\ordersystem\model" />
-      <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\store\src\main\java\pl\pp\store\store" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Studia\SemVII\Praca_Inżynierska\Final-Project\store\src\main\resources" />
@@ -345,7 +315,7 @@
       <workItem from="1638829194434" duration="969000" />
       <workItem from="1638830913424" duration="3952000" />
       <workItem from="1639001979999" duration="6087000" />
-      <workItem from="1639344139709" duration="9142000" />
+      <workItem from="1639344139709" duration="9707000" />
     </task>
     <servers />
   </component>
