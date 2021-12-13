@@ -8,4 +8,4 @@ RUN mvn clean package -DskipTests
 FROM adoptopenjdk:11-jre-hotspot
 COPY --from=build target/raporting-*.jar /app/app.jar
 CMD ["java", "-jar", "/app/app.jar"]
-EXPOSE 8762
+EXPOSE 8764

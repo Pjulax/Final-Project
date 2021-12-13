@@ -13,6 +13,12 @@ spring:
             - Path=/ordersystem-service/**
           filters:
             - StripPrefix=1
+        - id: raporting-service
+          uri: lb://raporting-service
+          predicates:
+            - Path=/raporting-service/**
+          filters:
+            - StripPrefix=1
         - id: store-service
           uri: lb://store-service
           predicates:

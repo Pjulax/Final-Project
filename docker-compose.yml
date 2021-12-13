@@ -96,6 +96,38 @@ services:
       retries: 5
       start_period: 5s
 
+  raporting-service:
+    build:
+      context: ./raporting
+    image: fp-raporting-service:latest
+    hostname: raporting-service
+    expose:
+      - "8764"
+    networks:
+      services-network-01:
+        aliases:
+          - raporting-service
+    depends_on:
+      registry:
+        condition: service_healthy
+      PostgreSQL:
+        condition: service_healthy
+      ordersystem-service:
+       condition: service_healthy
+      store-service:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://PostgreSQL:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+    healthcheck:
+      test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
+      interval: 5s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
   gateway:
     build:
       context: ./gateway
@@ -110,6 +142,7 @@ services:
     depends_on:
       - ordersystem-service
       - store-service
+      - raporting-service
       - registry
     healthcheck:
       test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
