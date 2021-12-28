@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <used-port>8763</used-port>
+        <used-port>8761</used-port>
     </properties>
 
     <dependencies>
