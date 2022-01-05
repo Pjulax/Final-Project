@@ -50,17 +50,15 @@ services:
         aliases:
           - ordersystem-service
     depends_on:
-      registry:
-        condition: service_healthy
-      PostgreSQL:
-        condition: service_healthy
+      - registry
+      - PostgreSQL
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://PostgreSQL:5432/postgres
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     healthcheck:
-      test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
+      test: "curl --fail --silent ordersystem-service:8762/actuator/health | grep UP || exit 1"
       interval: 5s
       timeout: 3s
       retries: 5
@@ -78,23 +76,20 @@ services:
         aliases:
           - store-service
     depends_on:
-      registry:
-        condition: service_healthy
-      PostgreSQL:
-        condition: service_healthy
-      ordersystem-service:
-        condition: service_healthy
+      - registry
+      - PostgreSQL
+      - ordersystem-service
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://PostgreSQL:5432/postgres
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=none
     healthcheck:
-      test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
+      test: "curl --fail --silent store-service:8763/actuator/health | grep UP || exit 1"
       interval: 5s
       timeout: 3s
       retries: 5
-      start_period: 5s
+      start_period: 15s
 
   raporting-service:
     build:
@@ -108,21 +103,17 @@ services:
         aliases:
           - raporting-service
     depends_on:
-      registry:
-        condition: service_healthy
-      PostgreSQL:
-        condition: service_healthy
-      ordersystem-service:
-       condition: service_healthy
-      store-service:
-        condition: service_healthy
+      - registry
+      - PostgreSQL
+      - ordersystem-service
+      - store-service
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://PostgreSQL:5432/postgres
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=none
     healthcheck:
-      test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
+      test: "curl --fail --silent raporting-service:8764/actuator/health | grep UP || exit 1"
       interval: 5s
       timeout: 3s
       retries: 5
@@ -145,7 +136,7 @@ services:
       - raporting-service
       - registry
     healthcheck:
-      test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
+      test: "curl --fail --silent gateway:8760/actuator/health | grep UP || exit 1"
       interval: 5s
       timeout: 3s
       retries: 5

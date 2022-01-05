@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    microservice.group: final-project
+    io.kompose.service: gateway
+  name: gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: gateway
+  template:
+    metadata:
+      labels:
+#        io.kompose.network/services-network-01: "true"
+        microservice.group: final-project
+        io.kompose.service: gateway
+    spec:
+      containers:
+        - image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/gateway:latest
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              port: 8760
+              path: /actuator/health
+            failureThreshold: 5
+            initialDelaySeconds: 100
+            periodSeconds: 5
+            timeoutSeconds: 10
+          readinessProbe:
+            httpGet:
+              port: 8760
+              path: /actuator/health
+            failureThreshold: 5
+            initialDelaySeconds: 65
+            periodSeconds: 5
+            timeoutSeconds: 10
+          name: gateway
+          ports:
+            - containerPort: 8760
+          resources: {}
+      hostname: gateway
+      restartPolicy: Always

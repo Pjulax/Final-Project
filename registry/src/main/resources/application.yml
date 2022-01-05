@@ -17,3 +17,9 @@ eureka:
     hostname: registry
     metadata-map:
       zone: zone1
+
+management:
+  endpoint:
+    health:
+      show-components: always
+      show-details: always

@@ -33,11 +33,8 @@ eureka:
       region1: zone1
 
 management:
-  endpoints:
-    web:
-      exposure:
-        include:
-          - mappings
-          - env
-          - health
-          - info
+  endpoint:
+    health:
+      show-components: always
+      show-details: always
+      enabled: true

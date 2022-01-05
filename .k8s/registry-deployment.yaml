@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    microservice.group: final-project
+    io.kompose.service: registry
+  name: registry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: registry
+  template:
+    metadata:
+      labels:
+#        io.kompose.network/services-network-01: "true"
+        microservice.group: final-project
+        io.kompose.service: registry
+    spec:
+      containers:
+        - image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/registry:latest
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              port: 8761
+              path: /actuator/health
+            failureThreshold: 5
+            initialDelaySeconds: 100
+            periodSeconds: 5
+            timeoutSeconds: 10
+          readinessProbe:
+            httpGet:
+              port: 8761
+              path: /actuator/health
+            failureThreshold: 5
+            initialDelaySeconds: 65
+            periodSeconds: 5
+            timeoutSeconds: 10
+          name: registry
+          ports:
+            - containerPort: 8761
+          resources: {}
+      hostname: registry
+      restartPolicy: Always

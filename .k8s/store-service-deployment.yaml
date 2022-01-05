@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    microservice.group: final-project
+    io.kompose.service: store-service
+  name: store-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: store-service
+  template:
+    metadata:
+      labels:
+#        io.kompose.network/services-network-01: "true"
+        microservice.group: final-project
+        io.kompose.service: store-service
+    spec:
+      containers:
+        - env:
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: password
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://PostgreSQL:5432/postgres
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: none
+          image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/store:latest
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              port: 8763
+              path: /actuator/health
+            failureThreshold: 5
+            initialDelaySeconds: 100
+            periodSeconds: 5
+            timeoutSeconds: 10
+          readinessProbe:
+            httpGet:
+              port: 8763
+              path: /actuator/health
+            failureThreshold: 5
+            initialDelaySeconds: 65
+            periodSeconds: 5
+            timeoutSeconds: 10
+          name: store-service
+          ports:
+            - containerPort: 8763
+          resources: {}
+      hostname: store-service
+      restartPolicy: Always

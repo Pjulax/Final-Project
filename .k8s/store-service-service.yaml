@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    microservice.group: final-project
+    io.kompose.service: store-service
+  name: store-service
+spec:
+  ports:
+    - name: "8763"
+      port: 8763
+      targetPort: 8763
+  selector:
+    io.kompose.service: store-service
