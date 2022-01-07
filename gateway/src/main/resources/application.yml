@@ -6,6 +6,9 @@ spring:
     name: gateway
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       routes:
         - id: ordersystem-service
           uri: lb://ordersystem-service
