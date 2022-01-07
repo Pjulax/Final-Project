@@ -24,12 +24,12 @@ build:
 deploy:
   kubectl:
     manifests:
-    - .k8s/PostgreSQL-service.yaml
+#    - .k8s/postgresql-service.yaml
     - .k8s/gateway-deployment.yaml
     - .k8s/gateway-service.yaml
     - .k8s/ordersystem-service-deployment.yaml
     - .k8s/ordersystem-service-service.yaml
-    - .k8s/postgresql-deployment.yaml
+#    - .k8s/postgresql-deployment.yaml
     - .k8s/raporting-service-deployment.yaml
     - .k8s/raporting-service-service.yaml
     - .k8s/registry-deployment.yaml

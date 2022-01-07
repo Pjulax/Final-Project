@@ -20,11 +20,11 @@ spec:
       containers:
         - env:
             - name: SPRING_DATASOURCE_PASSWORD
-              value: password
+              value: fpuser
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://PostgreSQL:5432/postgres
+              value: jdbc:postgresql://10.5.160.3:5432/final-project-db
             - name: SPRING_DATASOURCE_USERNAME
-              value: postgres
+              value: fpuser
             - name: SPRING_JPA_HIBERNATE_DDL_AUTO
               value: none
           image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/store:latest
@@ -34,7 +34,7 @@ spec:
               port: 8763
               path: /actuator/health
             failureThreshold: 5
-            initialDelaySeconds: 100
+            initialDelaySeconds: 45
             periodSeconds: 5
             timeoutSeconds: 10
           readinessProbe:
@@ -42,7 +42,7 @@ spec:
               port: 8763
               path: /actuator/health
             failureThreshold: 5
-            initialDelaySeconds: 65
+            initialDelaySeconds: 20
             periodSeconds: 5
             timeoutSeconds: 10
           name: store-service
