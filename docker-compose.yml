@@ -53,7 +53,7 @@ services:
           - ordersystem-service
     depends_on:
       - registry
-      - PostgreSQL
+      - postgresql
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/postgres
       - SPRING_DATASOURCE_USERNAME=postgres
@@ -79,7 +79,7 @@ services:
           - store-service
     depends_on:
       - registry
-      - PostgreSQL
+      - postgresql
       - ordersystem-service
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/postgres
@@ -106,7 +106,7 @@ services:
           - raporting-service
     depends_on:
       - registry
-      - PostgreSQL
+      - postgresql
       - ordersystem-service
       - store-service
     environment:
