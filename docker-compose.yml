@@ -3,7 +3,8 @@ services:
 
   registry:
     build:
-      context: ./registry
+      context: .
+      dockerfile: registry/Dockerfile
     image: fp-registry:latest
     hostname: registry
 
@@ -42,7 +43,8 @@ services:
 
   ordersystem-service:
     build:
-      context: ./ordersystem
+      context: .
+      dockerfile: ordersystem/Dockerfile
     image: fp-ordersystem-service:latest
     hostname: ordersystem-service
     expose:
@@ -68,7 +70,8 @@ services:
 
   store-service:
     build:
-      context: ./store
+      context: .
+      dockerfile: store/Dockerfile
     image: fp-store-service:latest
     hostname: store-service
     expose:
@@ -95,7 +98,8 @@ services:
 
   raporting-service:
     build:
-      context: ./raporting
+      context: .
+      dockerfile: raporting/Dockerfile
     image: fp-raporting-service:latest
     hostname: raporting-service
     expose:
@@ -123,7 +127,8 @@ services:
 
   gateway:
     build:
-      context: ./gateway
+      context: .
+      dockerfile: gateway/Dockerfile
     image: fp-gateway:latest
     hostname: gateway
     ports:

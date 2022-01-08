@@ -38,6 +38,22 @@ spring:
           uri: lb://registry
           predicates:
             - Path=/eureka/**
+        - id: openapi
+          uri: http://localhost:${server.port}
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+
+springdoc:
+  swagger-ui:
+    urls:
+      - name: store
+        url: /v3/api-docs/store
+      - name: ordersystem
+        url: /v3/api-docs/ordersystem
+      - name: raporting
+        url: /v3/api-docs/raporting
 
 info:
   app:
