@@ -7,7 +7,6 @@ services:
       dockerfile: registry/Dockerfile
     image: fp-registry:latest
     hostname: registry
-
     expose:
       - "8761"
     networks:
@@ -61,6 +60,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    restart: on-failure
     healthcheck:
       test: "curl --fail --silent ordersystem-service:8762/actuator/health | grep UP || exit 1"
       interval: 5s
@@ -89,6 +89,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+    restart: on-failure
     healthcheck:
       test: "curl --fail --silent store-service:8763/actuator/health | grep UP || exit 1"
       interval: 5s
@@ -118,6 +119,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+    restart: on-failure
     healthcheck:
       test: "curl --fail --silent raporting-service:8764/actuator/health | grep UP || exit 1"
       interval: 5s
@@ -142,6 +144,7 @@ services:
       - store-service
       - raporting-service
       - registry
+    restart: on-failure
     healthcheck:
       test: "curl --fail --silent gateway:8760/actuator/health | grep UP || exit 1"
       interval: 5s

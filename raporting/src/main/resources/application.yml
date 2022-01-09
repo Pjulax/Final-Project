@@ -13,6 +13,7 @@ logging:
 
 server:
   port: 8764
+  forward-headers-strategy: framework
 
 info:
   app:

@@ -9,6 +9,7 @@ spring:
 
 server:
   port: 8763
+  forward-headers-strategy: framework
 
 info:
   app:
