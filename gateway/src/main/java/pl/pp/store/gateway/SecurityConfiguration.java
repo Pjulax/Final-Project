@@ -14,9 +14,4 @@ public class SecurityConfiguration {
                 .anyExchange().permitAll()
                 .and().formLogin().disable().httpBasic().disable().build();
     }
-
-//    public void configure(WebSecurity web) throws Exception {
-//        web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**").antMatchers("/v3/api-docs/**",
-//                "/swagger-ui/**", "/swagger-ui/index.html/**");
-//    }
 }
