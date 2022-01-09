@@ -16,12 +16,12 @@ import java.util.List;
 @EnableEurekaClient
 public class GatewayApplication {
 
+    @Autowired
+    RouteDefinitionLocator locator;
+
     public static void main(String[] args) {
         SpringApplication.run(GatewayApplication.class, args);
     }
-
-    @Autowired
-    RouteDefinitionLocator locator;
 
     @Bean
     public List<GroupedOpenApi> apis() {
@@ -34,4 +34,6 @@ public class GatewayApplication {
         });
         return groups;
     }
+
+
 }
