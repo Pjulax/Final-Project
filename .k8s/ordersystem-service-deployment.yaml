@@ -29,12 +29,19 @@ spec:
               value: update
           image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/ordersystem:latest
           imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 200m
+              memory: 256Mi
+            limits:
+              cpu: 400m
+              memory: 512Mi
           livenessProbe:
             httpGet:
               port: 8762
               path: /actuator/health
             failureThreshold: 5
-            initialDelaySeconds: 45
+            initialDelaySeconds: 65
             periodSeconds: 5
             timeoutSeconds: 10
           readinessProbe:
@@ -42,12 +49,18 @@ spec:
               port: 8762
               path: /actuator/health
             failureThreshold: 5
-            initialDelaySeconds: 20
+            initialDelaySeconds: 40
             periodSeconds: 5
             timeoutSeconds: 10
           name: ordersystem-service
           ports:
             - containerPort: 8762
-          resources: {}
       hostname: ordersystem-service
       restartPolicy: Always
+#  strategy:
+#    type: Recreate
+
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 100%

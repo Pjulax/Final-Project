@@ -27,16 +27,21 @@ deploy:
 #    - .k8s/postgresql-service.yaml
     - .k8s/gateway-deployment.yaml
     - .k8s/gateway-service.yaml
+    - .k8s/gateway-hpa.yaml
     - .k8s/ordersystem-service-deployment.yaml
     - .k8s/ordersystem-service-service.yaml
+    - .k8s/ordersystem-service-hpa.yaml
 #    - .k8s/postgresql-deployment.yaml
     - .k8s/raporting-service-deployment.yaml
     - .k8s/raporting-service-service.yaml
+    - .k8s/raporting-service-hpa.yaml
     - .k8s/registry-deployment.yaml
     - .k8s/registry-service.yaml
+    - .k8s/registry-hpa.yaml
 #    - .k8s/services-network-01-networkpolicy.yaml
     - .k8s/store-service-deployment.yaml
     - .k8s/store-service-service.yaml
+    - .k8s/store-service-hpa.yaml
 profiles:
 - name: gcb
   build:
