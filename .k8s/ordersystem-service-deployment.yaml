@@ -13,20 +13,33 @@ spec:
   template:
     metadata:
       labels:
-#        io.kompose.network/services-network-01: "true"
         microservice.group: final-project
         io.kompose.service: ordersystem-service
     spec:
       containers:
         - env:
-            - name: SPRING_DATASOURCE_PASSWORD
-              value: fpuser
-            - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://10.5.160.3:5432/final-project-db
-            - name: SPRING_DATASOURCE_USERNAME
-              value: fpuser
-            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
-              value: update
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: final-project-database-secret
+                  key: username
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: final-project-database-secret
+                  key: password
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: final-project-database-secret
+                  key: database
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: final-project-database-private-ip-secret
+                  key: db_host
+            - name: SPRING_PROFILES_ACTIVE
+              value: gcp
           image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/ordersystem:latest
           imagePullPolicy: IfNotPresent
           resources:
@@ -57,9 +70,6 @@ spec:
             - containerPort: 8762
       hostname: ordersystem-service
       restartPolicy: Always
-#  strategy:
-#    type: Recreate
-
   strategy:
     rollingUpdate:
       maxSurge: 1

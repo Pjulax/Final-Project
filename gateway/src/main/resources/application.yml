@@ -62,10 +62,6 @@ info:
     name: ${spring.application.name}
 
 eureka:
-  instance:
-    prefer-ip-address: true
-    metadata-map:
-      zone: zone1
   client:
     prefer-same-zone-eureka: true
     register-with-eureka: true

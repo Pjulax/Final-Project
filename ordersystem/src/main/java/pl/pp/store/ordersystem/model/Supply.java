@@ -19,7 +19,7 @@ public class Supply {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String from;
+    private String deliveredFrom;
     private Date arrival;
     @ManyToOne(fetch = FetchType.LAZY)
     private User supplier;

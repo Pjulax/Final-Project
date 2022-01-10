@@ -13,7 +13,6 @@ spec:
   template:
     metadata:
       labels:
-#        io.kompose.network/services-network-01: "true"
         microservice.group: final-project
         io.kompose.service: registry
     spec:
@@ -48,9 +47,6 @@ spec:
             - containerPort: 8761
       hostname: registry
       restartPolicy: Always
-#  strategy:
-#    type: Recreate
-
   strategy:
     rollingUpdate:
       maxSurge: 1

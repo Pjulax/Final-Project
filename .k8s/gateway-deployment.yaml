@@ -13,7 +13,6 @@ spec:
   template:
     metadata:
       labels:
-#        io.kompose.network/services-network-01: "true"
         microservice.group: final-project
         io.kompose.service: gateway
     spec:
@@ -48,9 +47,6 @@ spec:
             - containerPort: 8760
       hostname: gateway
       restartPolicy: Always
-#  strategy:
-#    type: Recreate
-
   strategy:
     rollingUpdate:
       maxSurge: 1
