@@ -6,12 +6,12 @@
     <parent>
         <groupId>pl.pp.store</groupId>
         <artifactId>Final-Project</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.2</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>registry</artifactId>
-    <version>0.0.1</version>
+    <version>${parent.version}</version>
     <name>registry</name>
     <description>Demo project for Spring Boot</description>
 
