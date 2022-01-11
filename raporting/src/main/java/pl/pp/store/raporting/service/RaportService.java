@@ -21,7 +21,7 @@ public class RaportService {
 
     private final ProductService productService;
 
-    public ByteArrayInputStream generateReport(){
+    public ByteArrayInputStream generateRaport(){
 
 
 
@@ -111,4 +111,11 @@ public class RaportService {
         return new ByteArrayInputStream(out.toByteArray());
     }
 
+    public ByteArrayInputStream generateAllRaport() {
+        return null;
+    }
+
+    public ByteArrayInputStream generateArticleRaport() {
+        return null;
+    }
 }
