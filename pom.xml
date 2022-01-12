@@ -22,7 +22,7 @@
         <module>registry</module>
         <module>gateway</module>
         <module>ordersystem</module>
-        <module>raporting</module>
+        <module>reporting</module>
         <module>store</module>
     </modules>
 

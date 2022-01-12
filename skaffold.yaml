@@ -12,9 +12,9 @@ build:
   - image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/ordersystem
     jib:
       project: ordersystem
-  - image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/raporting
+  - image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/reporting
     jib:
-      project: raporting
+      project: reporting
   - image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/store
     jib:
       project: store
@@ -32,9 +32,9 @@ deploy:
     - .k8s/ordersystem-service-service.yaml
     - .k8s/ordersystem-service-hpa.yaml
 #    - .k8s/postgresql-deployment.yaml
-    - .k8s/raporting-service-deployment.yaml
-    - .k8s/raporting-service-service.yaml
-    - .k8s/raporting-service-hpa.yaml
+    - .k8s/reporting-service-deployment.yaml
+    - .k8s/reporting-service-service.yaml
+    - .k8s/reporting-service-hpa.yaml
     - .k8s/registry-deployment.yaml
     - .k8s/registry-service.yaml
     - .k8s/registry-hpa.yaml

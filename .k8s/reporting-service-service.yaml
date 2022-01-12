@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    microservice.group: final-project
+    io.kompose.service: reporting-service
+  name: reporting-service
+spec:
+  ports:
+    - name: "8764"
+      port: 8764
+      targetPort: 8764
+  selector:
+    io.kompose.service: reporting-service

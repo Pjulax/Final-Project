@@ -3,6 +3,11 @@ spring:
     name: store-service
   datasource:
     driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+
 
 server:
   port: 8763

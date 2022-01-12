@@ -17,10 +17,10 @@ spring:
             - Path=/ordersystem-service/**
           filters:
             - StripPrefix=1
-        - id: raporting-service
-          uri: lb://raporting-service
+        - id: reporting-service
+          uri: lb://reporting-service
           predicates:
-            - Path=/raporting-service/**
+            - Path=/reporting-service/**
           filters:
             - StripPrefix=1
         - id: store-service
@@ -53,8 +53,8 @@ springdoc:
         url: /v3/api-docs/store-service
       - name: ordersystem
         url: /v3/api-docs/ordersystem-service
-      - name: raporting
-        url: /v3/api-docs/raporting-service
+      - name: reporting
+        url: /v3/api-docs/reporting-service
 
 
 info:

@@ -1,8 +1,8 @@
 spring:
   application:
-    name: ordersystem-service
+    name: reporting-service
   main:
-    banner-mode: console
+    banner-mode: "off"
   datasource:
     driver-class-name: org.postgresql.Driver
 
@@ -12,7 +12,7 @@ logging:
       springframework: info
 
 server:
-  port: 8762
+  port: 8764
   forward-headers-strategy: framework
 
 info:
@@ -48,7 +48,7 @@ spring:
     url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
 ---
 spring:
   config:
@@ -61,4 +61,4 @@ spring:
     url: jdbc:postgresql://postgresql:5432/postgres
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
