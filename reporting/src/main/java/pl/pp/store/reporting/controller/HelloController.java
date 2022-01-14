@@ -61,9 +61,9 @@ public class HelloController {
                 .body(new InputStreamResource(bis));
     }
 
-    @GetMapping(value = "/pdfreport/article/{articleId}",
+    @GetMapping(value = "/pdfreport/article/{article_id}",
             produces = MediaType.APPLICATION_PDF_VALUE)
-    public ResponseEntity<InputStreamResource> articleReport(@PathVariable(name = "articleId") Long articleId) {
+    public ResponseEntity<InputStreamResource> articleReport(@PathVariable(name = "article_id") Long articleId) {
 
         // TODO - change servise generateReport to generateArticleReport
         ByteArrayInputStream bis = reportService.generateArticleReport();

@@ -35,4 +35,8 @@ public class ProductService {
 
     }
 
+    public StoredProductsListDto getMyStoredProducts() {
+        //TODO
+        return null;
+    }
 }

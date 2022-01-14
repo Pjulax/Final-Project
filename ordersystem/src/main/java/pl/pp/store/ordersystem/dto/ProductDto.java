@@ -13,8 +13,8 @@ public class ProductDto {
 
     public static ProductDto fromDomain(StoredProduct storedProduct){
         return new ProductDto(
-                storedProduct.getArticle().getName(),
-                storedProduct.getArticle().getCode(),
+                storedProduct.getProduct().getName(),
+                storedProduct.getProduct().getCode(),
                 storedProduct.getQuantity());
     }
 

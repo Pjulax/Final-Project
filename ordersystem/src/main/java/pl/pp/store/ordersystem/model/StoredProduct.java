@@ -19,8 +19,8 @@ public class StoredProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long quantity;
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH, optional = false)
-    private Article article;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.DETACH, optional = false)
+    private Product product;
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.DETACH, optional = false)
     private Store store;
     private Boolean isSupplyAccepted;
