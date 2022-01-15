@@ -40,27 +40,6 @@ services:
       timeout: 5s
       retries: 5
 
-  keycloak:
-    image: quay.io/keycloak/keycloak:latest
-    hostname: auth-service
-    expose:
-      - "8080"
-    networks:
-      services-network-01:
-        aliases:
-          - auth-service
-    depends_on:
-      - postgresql
-    environment:
-      - DB_VENDOR=POSTGRES
-      - DB_ADDR=postgres
-      - DB_DATABASE=postgres
-      - DB_USER=keycloak
-      - DB_SCHEMA=public
-      - DB_PASSWORD=password
-      - KEYCLOAK_USER=admin
-      - KEYCLOAK_PASSWORD=Pa55w0rd
-
   ordersystem-service:
     build:
       context: .
