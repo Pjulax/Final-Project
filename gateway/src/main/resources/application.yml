@@ -10,6 +10,8 @@ spring:
       enabled: false
       reload:
         enabled: false
+      discovery:
+        enabled: false
     gateway:
       discovery:
         locator:
@@ -54,7 +56,7 @@ spring:
 logging:
   level:
     org:
-      springframework: debug
+      springframework: info
 
 springdoc:
   swagger-ui:

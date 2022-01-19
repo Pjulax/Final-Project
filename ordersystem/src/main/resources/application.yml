@@ -10,10 +10,12 @@ spring:
       enabled: false
       reload:
         enabled: false
+      discovery:
+        enabled: false
 logging:
   level:
     org:
-      springframework: debug
+      springframework: info
 
 server:
   port: 8762
