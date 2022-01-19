@@ -6,6 +6,10 @@ spring:
   main:
     web-application-type: reactive
   cloud:
+    kubernetes:
+      enabled: false
+      reload:
+        enabled: false
     gateway:
       discovery:
         locator:
@@ -35,16 +39,22 @@ spring:
             - Path=/registry/**
           filters:
             - StripPrefix=1
+# To change to Local only profile
         - id: eureka
           uri: lb://registry
           predicates:
             - Path=/eureka/**
+# To change to OpenApi only profile
         - id: openapi
           uri: http://localhost:${server.port}
           predicates:
             - Path=/v3/api-docs/**
           filters:
             - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+logging:
+  level:
+    org:
+      springframework: debug
 
 springdoc:
   swagger-ui:
@@ -55,6 +65,7 @@ springdoc:
         url: /v3/api-docs/ordersystem-service
       - name: reporting
         url: /v3/api-docs/reporting-service
+    enabled: true
 
 
 info:
@@ -70,9 +81,43 @@ eureka:
       zone1: http://registry:8761/eureka/
     availability-zones:
       region1: zone1
+    enabled: true
 
 management:
   endpoint:
     health:
       show-components: always
       show-details: always
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+---
+spring:
+  config:
+    activate:
+      on-profile: gcp
+  cloud:
+    kubernetes:
+      enabled: true
+      discovery:
+        primary-port-name: 8760
+        enabled: true
+  autoconfigure:
+    exclude: org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration
+
+
+eureka:
+  client:
+    enabled: false

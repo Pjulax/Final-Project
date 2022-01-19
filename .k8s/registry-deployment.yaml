@@ -24,22 +24,22 @@ spec:
               cpu: 200m
               memory: 256Mi
             limits:
-              cpu: 400m
+              cpu: 500m
               memory: 512Mi
           livenessProbe:
             httpGet:
-              port: 8761
-              path: /actuator/health
+              port: 8763
+              path: /actuator/health/liveness
             failureThreshold: 5
-            initialDelaySeconds: 65
+            initialDelaySeconds: 30
             periodSeconds: 5
             timeoutSeconds: 10
           readinessProbe:
             httpGet:
-              port: 8761
-              path: /actuator/health
+              port: 8763
+              path: /actuator/health/readiness
             failureThreshold: 5
-            initialDelaySeconds: 40
+            initialDelaySeconds: 65
             periodSeconds: 5
             timeoutSeconds: 10
           name: registry

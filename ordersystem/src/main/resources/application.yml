@@ -5,11 +5,15 @@ spring:
     banner-mode: console
   datasource:
     driver-class-name: org.postgresql.Driver
-
+  cloud:
+    kubernetes:
+      enabled: false
+      reload:
+        enabled: false
 logging:
   level:
     org:
-      springframework: info
+      springframework: debug
 
 server:
   port: 8762
@@ -35,12 +39,22 @@ management:
       show-components: always
       show-details: always
       enabled: true
-
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
 ---
 spring:
   config:
     activate:
       on-profile: gcp
+  cloud:
+    kubernetes:
+      enabled: true
+      discovery:
+        primary-port-name: 8762
+        enabled: true
 
   datasource:
     username: ${DB_USER}
@@ -49,6 +63,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+  autoconfigure:
+    exclude: org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration
+
+eureka:
+  client:
+    enabled: false
+
 ---
 spring:
   config:

@@ -13,12 +13,12 @@ services:
       services-network-01:
         aliases:
           - registry
-    healthcheck:
-      test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
-      interval: 5s
-      timeout: 3s
-      retries: 5
-      start_period: 5s
+#    healthcheck:
+#      test: "curl --fail --silent registry:8761/actuator/health | grep UP || exit 1"
+#      interval: 5s
+#      timeout: 3s
+#      retries: 5
+#      start_period: 5s
 
   postgresql:
     image: postgres
@@ -34,11 +34,11 @@ services:
       - POSTGRES_DB=postgres
     volumes:
       - pgdata:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+#    healthcheck:
+#      test: ["CMD-SHELL", "pg_isready -U postgres"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
 
   ordersystem-service:
     build:
@@ -58,12 +58,12 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=local
     restart: on-failure
-    healthcheck:
-      test: "curl --fail --silent ordersystem-service:8762/actuator/health | grep UP || exit 1"
-      interval: 5s
-      timeout: 3s
-      retries: 5
-      start_period: 5s
+#    healthcheck:
+#      test: "curl --fail --silent ordersystem-service:8762/actuator/health | grep UP || exit 1"
+#      interval: 5s
+#      timeout: 3s
+#      retries: 5
+#      start_period: 5s
 
   store-service:
     build:
@@ -84,12 +84,12 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=local
     restart: on-failure
-    healthcheck:
-      test: "curl --fail --silent store-service:8763/actuator/health | grep UP || exit 1"
-      interval: 5s
-      timeout: 3s
-      retries: 5
-      start_period: 15s
+#    healthcheck:
+#      test: "curl --fail --silent store-service:8763/actuator/health | grep UP || exit 1"
+#      interval: 5s
+#      timeout: 3s
+#      retries: 5
+#      start_period: 15s
 
   reporting-service:
     build:
@@ -111,12 +111,14 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=local
     restart: on-failure
-    healthcheck:
-      test: "curl --fail --silent reporting-service:8764/actuator/health | grep UP || exit 1"
-      interval: 5s
-      timeout: 3s
-      retries: 5
-      start_period: 5s
+    deploy:
+      replicas: 3
+#    healthcheck:
+#      test: "curl --fail --silent reporting-service:8764/actuator/health | grep UP || exit 1"
+#      interval: 5s
+#      timeout: 3s
+#      retries: 5
+#      start_period: 5s
 
   gateway:
     build:
@@ -136,12 +138,12 @@ services:
       - reporting-service
       - registry
     restart: on-failure
-    healthcheck:
-      test: "curl --fail --silent gateway:8760/actuator/health | grep UP || exit 1"
-      interval: 5s
-      timeout: 3s
-      retries: 5
-      start_period: 5s
+#    healthcheck:
+#      test: "curl --fail --silent gateway:8760/actuator/health | grep UP || exit 1"
+#      interval: 5s
+#      timeout: 3s
+#      retries: 5
+#      start_period: 5s
 
 networks:
   services-network-01:

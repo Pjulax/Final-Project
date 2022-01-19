@@ -47,22 +47,22 @@ spec:
               cpu: 200m
               memory: 256Mi
             limits:
-              cpu: 400m
+              cpu: 500m
               memory: 512Mi
           livenessProbe:
             httpGet:
               port: 8764
-              path: /actuator/health
+              path: /actuator/health/liveness
             failureThreshold: 5
-            initialDelaySeconds: 65
+            initialDelaySeconds: 50
             periodSeconds: 5
-            timeoutSeconds: 10
+            timeoutSeconds: 20
           readinessProbe:
             httpGet:
               port: 8764
-              path: /actuator/health
+              path: /actuator/health/readiness
             failureThreshold: 5
-            initialDelaySeconds: 40
+            initialDelaySeconds: 85
             periodSeconds: 5
             timeoutSeconds: 10
           name: reporting-service
