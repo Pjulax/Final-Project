@@ -85,4 +85,3 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-TestforpollingPortainer: false
