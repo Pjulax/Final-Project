@@ -1,26 +1,22 @@
 package pl.pp.store.reporting.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
-public class StoredProductsListDto {
-    private StoreDto store;
-    private List<StoredProductDto> products;
+public class StoreListDto {
+    private final List<StoreDto> storeList;
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder("StoredProductsListDto:\n");
-        for (StoredProductDto obj : products) {
+        for (StoreDto obj : storeList) {
             stringBuilder.append(obj.toString());
         }
         stringBuilder.append("================== Object END =====================\n");
         return stringBuilder.toString();
     }
-
 }

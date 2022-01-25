@@ -1,42 +1,34 @@
 package pl.pp.store.reporting.controller;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import pl.pp.store.reporting.model.Article;
+import org.springframework.web.bind.annotation.*;
+import pl.pp.store.reporting.dto.StoreKeeperCredentialsDto;
 import pl.pp.store.reporting.service.ReportService;
 
 import java.io.ByteArrayInputStream;
 
 @RestController
-@RequestMapping("/hello")
+@RequestMapping("/")
 @RequiredArgsConstructor
-public class HelloController {
+@Slf4j
+public class ReportController {
 
     private final ReportService reportService;
 
-    @GetMapping
-    public ResponseEntity hello(){
-        return new ResponseEntity<String>("Hello World", HttpStatus.OK);
-    }
-
-
-    @GetMapping(value = "/pdfreport",
+    @GetMapping(value = "/store/my",
             produces = MediaType.APPLICATION_PDF_VALUE)
-    public ResponseEntity<InputStreamResource> storeReport() {
+    public ResponseEntity<InputStreamResource> storeReport(@RequestBody StoreKeeperCredentialsDto storeKeeperCredentialsDto) {
 
-        ByteArrayInputStream bis = reportService.generateReport();
+        ByteArrayInputStream bis = reportService.generateMyStoreStoredProductsReport(storeKeeperCredentialsDto);
 
         var headers = new HttpHeaders();
         headers.add("Content-Disposition", "inline; filename=articlesreport.pdf");
-
+        log.info("I'm providing pdf!");
         return ResponseEntity
                 .ok()
                 .headers(headers)
@@ -44,12 +36,12 @@ public class HelloController {
                 .body(new InputStreamResource(bis));
     }
 
-    @GetMapping(value = "/pdfreport/all",
+    @GetMapping(value = "/store/all",
             produces = MediaType.APPLICATION_PDF_VALUE)
-    public ResponseEntity<InputStreamResource> allStoresReport() {
+    public ResponseEntity<InputStreamResource> allStoresReport(@RequestBody StoreKeeperCredentialsDto storeKeeperCredentialsDto) {
 
         // TODO - change servise generateReport to generateAllReport
-        ByteArrayInputStream bis = reportService.generateAllReport();
+        ByteArrayInputStream bis = reportService.generateAllReport(storeKeeperCredentialsDto);
 
         var headers = new HttpHeaders();
         headers.add("Content-Disposition", "inline; filename=articlesreport.pdf");
@@ -61,12 +53,12 @@ public class HelloController {
                 .body(new InputStreamResource(bis));
     }
 
-    @GetMapping(value = "/pdfreport/article/{article_id}",
+    @GetMapping(value = "/product/{code}",
             produces = MediaType.APPLICATION_PDF_VALUE)
-    public ResponseEntity<InputStreamResource> articleReport(@PathVariable(name = "article_id") Long articleId) {
+    public ResponseEntity<InputStreamResource> articleReport(@PathVariable(name = "code") String code, @RequestBody StoreKeeperCredentialsDto storeKeeperCredentialsDto) {
 
-        // TODO - change servise generateReport to generateArticleReport
-        ByteArrayInputStream bis = reportService.generateArticleReport();
+
+        ByteArrayInputStream bis = reportService.generateProductReport(code, storeKeeperCredentialsDto);
 
         var headers = new HttpHeaders();
         headers.add("Content-Disposition", "inline; filename=articlesreport.pdf");

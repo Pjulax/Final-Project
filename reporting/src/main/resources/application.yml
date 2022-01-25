@@ -2,9 +2,7 @@ spring:
   application:
     name: reporting-service
   main:
-    banner-mode: "off"
-  datasource:
-    driver-class-name: org.postgresql.Driver
+    banner-mode: "console"
   cloud:
     kubernetes:
       enabled: false
@@ -58,13 +56,6 @@ spring:
       discovery:
         primary-port-name: 8764
         enabled: true
-  datasource:
-    username: ${DB_USER}
-    password: ${DB_PASS}
-    url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}
-  jpa:
-    hibernate:
-      ddl-auto: none
   autoconfigure:
     exclude: org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration
 
@@ -76,11 +67,3 @@ spring:
   config:
     activate:
       on-profile: local
-
-  datasource:
-    username: postgres
-    password: password
-    url: jdbc:postgresql://postgresql:5432/postgres
-  jpa:
-    hibernate:
-      ddl-auto: none

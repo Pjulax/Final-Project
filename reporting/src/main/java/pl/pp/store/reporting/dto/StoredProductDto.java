@@ -5,14 +5,13 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class StoreDto {
+public class StoredProductDto {
     private final String name;
-    private final String localization;
     private final String code;
+    private final Long quantity;
 
     @Override
     public String toString() {
-        return name + ";" + localization + ";" + code + "\n";
+        return name + ";" + code + ";" + quantity + "\n";
     }
-
 }
