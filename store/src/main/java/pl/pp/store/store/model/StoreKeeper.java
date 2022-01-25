@@ -12,13 +12,15 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="articles")
-public class Article {
-
+@Table(name = "users")
+public class StoreKeeper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String code;
+    @Column(unique = true)
+    private String login;
+    private String password;
+    private String firstName;
+    private String lastName;
 
 }

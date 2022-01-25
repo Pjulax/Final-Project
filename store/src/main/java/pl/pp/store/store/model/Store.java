@@ -12,16 +12,16 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="stores")
+@Table(name = "stores")
 public class Store {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String address;
+    private String localization;
+    @Column(unique = true, length = 6, nullable = false)
     private String code;
-//    @OneToOne(fetch = FetchType.LAZY)
-//    private User storeKeeper;
-
+    @OneToOne(fetch = FetchType.LAZY)
+    private StoreKeeper storeKeeper;
 }

@@ -5,7 +5,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   sql:
     init:
-      mode: always
+      mode: never
       continue-on-error: true
   cloud:
     kubernetes:
@@ -67,7 +67,7 @@ spring:
     url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
   autoconfigure:
     exclude: org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration
 
@@ -86,4 +86,4 @@ spring:
     url: jdbc:postgresql://postgresql:5432/postgres
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create

@@ -1,7 +1,7 @@
 INSERT INTO stores (name, address, code) VALUES
 ('Store1', 'City1', 'S1C1');
 
-INSERT INTO articles (name, code) VALUES
+INSERT INTO products (name, code) VALUES
 ('Article1', 'ART1'),
 ('Article2', 'ART2'),
 ('Article3', 'ART3'),
@@ -13,7 +13,7 @@ INSERT INTO articles (name, code) VALUES
 ('Article9', 'ART9'),
 ('Article10', 'ART10');
 
-INSERT INTO stored_products (quantity, article_id, store_id) VALUES
+INSERT INTO stored_products (quantity, product_id, store_id) VALUES
 ('10', '1', '1'),
 ('20', '2', '1'),
 ('30', '3', '1'),
