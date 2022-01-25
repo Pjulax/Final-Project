@@ -40,14 +40,14 @@ spec:
                   key: db_host
             - name: SPRING_PROFILES_ACTIVE
               value: gcp
-          image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/ordersystem:latest
+          image: europe-west3-docker.pkg.dev/final-project-338819/fp-repo/ordersystem:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:
               cpu: 200m
               memory: 256Mi
             limits:
-              cpu: 400m
+              cpu: 800m
               memory: 512Mi
           livenessProbe:
             httpGet:

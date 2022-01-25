@@ -19,8 +19,8 @@ spec:
       containers:
         - env:
           - name: SPRING_PROFILES_ACTIVE
-            value: prod,gcp
-          image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/gateway:latest
+            value: gcp
+          image: europe-west3-docker.pkg.dev/final-project-338819/fp-repo/gateway:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:

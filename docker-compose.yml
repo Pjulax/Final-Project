@@ -112,7 +112,7 @@ services:
       - SPRING_PROFILES_ACTIVE=local
     restart: on-failure
     deploy:
-      replicas: 3
+      replicas: 1
 #    healthcheck:
 #      test: "curl --fail --silent reporting-service:8764/actuator/health | grep UP || exit 1"
 #      interval: 5s

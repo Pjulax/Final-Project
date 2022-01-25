@@ -17,7 +17,7 @@ spec:
         io.kompose.service: registry
     spec:
       containers:
-        - image: europe-west3-docker.pkg.dev/final-project-334521/fp-repo/registry:latest
+        - image: europe-west3-docker.pkg.dev/final-project-338819/fp-repo/registry:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:
