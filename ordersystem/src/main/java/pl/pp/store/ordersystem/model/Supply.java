@@ -13,13 +13,20 @@ import java.sql.Date;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="supplies")
+@Table(name = "supplies")
 public class Supply {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String deliveredFrom;
-    private Date arrival;
+    @Column(unique = true, length = 10, nullable = false)
+    private String code;
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    private Product product;
+    private Long quantity;
+    @Column(length = 6, nullable = false)
+    private String targetStoreCode;
+    private Date arrivalDate;
+    private Boolean isAccepted;
 
 }

@@ -2,30 +2,25 @@ package pl.pp.store.ordersystem.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import pl.pp.store.ordersystem.model.StoredProduct;
+import pl.pp.store.ordersystem.model.CategoryType;
+import pl.pp.store.ordersystem.model.Product;
 
 @Getter
 @AllArgsConstructor
 public class ProductDto {
     private final String name;
+    private final CategoryType category;
     private final String code;
-    private final Long quantity;
 
-    public static ProductDto fromDomain(StoredProduct storedProduct){
-        return new ProductDto(
-                storedProduct.getProduct().getName(),
-                storedProduct.getProduct().getCode(),
-                storedProduct.getQuantity());
+    public static ProductDto fromDomain(Product product) {
+        return new ProductDto(product.getName(),product.getCategory(),product.getCode());
     }
 
-    @Override
-    public String toString(){
-        return "Object ProductDto:\n" + "name: " +
-                name +
-                "\ncode: " +
-                code +
-                "\nquantity: " +
-                quantity +
-                "\n================== Object END =====================\n";
+    public Product toDomain() {
+        return Product.builder()
+                .name(name)
+                .category(category)
+                .code(code)
+                .build();
     }
 }

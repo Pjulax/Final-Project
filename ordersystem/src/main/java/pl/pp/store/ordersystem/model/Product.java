@@ -12,13 +12,16 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name="products")
+@Table(name = "products")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Enumerated(EnumType.STRING)
+    private CategoryType category;
+    @Column(unique = true, length = 10, nullable = false)
     private String code;
 
 }

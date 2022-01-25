@@ -2,41 +2,32 @@ package pl.pp.store.ordersystem.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import pl.pp.store.ordersystem.dto.StoredProductsListDto;
-import pl.pp.store.ordersystem.model.Store;
-import pl.pp.store.ordersystem.model.StoredProduct;
-import pl.pp.store.ordersystem.repository.ArticleRepository;
-import pl.pp.store.ordersystem.repository.StoreRepository;
-import pl.pp.store.ordersystem.repository.StoredProductRepository;
-
-import java.util.List;
+import org.springframework.web.server.ResponseStatusException;
+import pl.pp.store.ordersystem.dto.ProductDto;
+import pl.pp.store.ordersystem.dto.ProductsListDto;
+import pl.pp.store.ordersystem.dto.StoreKeeperCredentialsDto;
+import pl.pp.store.ordersystem.dto.StoredProductDto;
+import pl.pp.store.ordersystem.feign.StoreFeignClientImpl;
+import pl.pp.store.ordersystem.repository.ProductRepository;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class ProductService {
 
-    private final ArticleRepository articleRepository;
-    private final StoredProductRepository storedProductRepository;
-    private final StoreRepository storeRepository;
+    private final ProductRepository productRepository;
+    private final StoreFeignClientImpl storeFeignClient;
 
-    public StoredProductsListDto getAllStoredProducts(){
-
-        StoredProductsListDto storedProducts;
-
-        List<StoredProduct> storedProductList = storedProductRepository.findAll();
-        if(!storedProductList.isEmpty()){
-            storedProducts = StoredProductsListDto.fromDomain(storedProductList.get(0).getStore(), storedProductList);
-            log.debug(storedProducts.toString());
-            return storedProducts;
-        }
-        return null;
-
+    public void addProduct(ProductDto productDto) {
+        productRepository.findByCode(productDto.getCode()).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Product with that code exists, code must be unique."));
+        productRepository.save(productDto.toDomain());
     }
 
-    public StoredProductsListDto getMyStoredProducts() {
-        //TODO
-        return null;
+    public ProductsListDto getAllProducts(StoreKeeperCredentialsDto storeKeeperCredentialsDto) {
+        storeFeignClient.isStoreKeeperFromStoreRequest(storeKeeperCredentialsDto);
+        return ProductsListDto.fromDomain(productRepository.findAll());
     }
+
 }

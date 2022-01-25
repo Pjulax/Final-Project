@@ -64,7 +64,7 @@ spring:
     url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
   autoconfigure:
     exclude: org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration
 
