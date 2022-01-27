@@ -18,27 +18,27 @@ public class OrderFeignClientImpl {
     private final OrderFeignClient orderFeignClient;
 
     public StoredProductStoresListDto getOneStoredProductFromAllStores(String code, StoreKeeperCredentialsDto storeKeeperCredentialsDto) {
-        ResponseEntity<Object> response = orderFeignClient.getOneStoredProductFromAllStores(code, storeKeeperCredentialsDto);
+        ResponseEntity<StoredProductStoresListDto> response = orderFeignClient.getOneStoredProductFromAllStores(code, storeKeeperCredentialsDto);
         if (response.getStatusCode().isError())
-            throw new ResponseStatusException(response.getStatusCode(), (String) response.getBody());
+            throw new ResponseStatusException(response.getStatusCode(), "Something went wrong, it is fallback.");
         log.debug("Request sent\nStatus code is: {}", response.getStatusCode());
-        return (StoredProductStoresListDto) response.getBody();
+        return  response.getBody();
     }
 
     public StoredProductsListDto getMyStoreStoredProducts(StoreKeeperCredentialsDto storeKeeperCredentialsDto) {
-        ResponseEntity<Object> response = orderFeignClient.getMyStoreStoredProducts(storeKeeperCredentialsDto);
+        ResponseEntity<StoredProductsListDto> response = orderFeignClient.getMyStoreStoredProducts(storeKeeperCredentialsDto);
         if (response.getStatusCode().isError())
-            throw new ResponseStatusException(response.getStatusCode(), (String) response.getBody());
+            throw new ResponseStatusException(response.getStatusCode(), "Something went wrong, it is fallback.");
         log.debug("Request sent\nStatus code is: {}", response.getStatusCode());
-        return (StoredProductsListDto) response.getBody();
+        return  response.getBody();
     }
 
     public AllStoresStoredProductsListDto getAllStoredProducts(StoreKeeperCredentialsDto storeKeeperCredentialsDto) {
-        ResponseEntity<Object> response = orderFeignClient.getAllStoredProducts(storeKeeperCredentialsDto);
+        ResponseEntity<AllStoresStoredProductsListDto> response = orderFeignClient.getAllStoredProducts(storeKeeperCredentialsDto);
         if (response.getStatusCode().isError())
-            throw new ResponseStatusException(response.getStatusCode(), (String) response.getBody());
+            throw new ResponseStatusException(response.getStatusCode(), "Something went wrong, it is fallback.");
         log.debug("Request sent\nStatus code is: {}", response.getStatusCode());
-        return (AllStoresStoredProductsListDto) response.getBody();
+        return  response.getBody();
     }
 
 }

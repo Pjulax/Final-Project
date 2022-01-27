@@ -17,33 +17,33 @@ public class StoreFeignClientImpl {
     private final StoreFeignClient storeFeignClient;
 
     public StoreListDto getAllStoresRequest(StoreKeeperCredentialsDto credentialsDto) {
-        ResponseEntity<Object> response = storeFeignClient.getAllStores(credentialsDto);
+        ResponseEntity<StoreListDto> response = storeFeignClient.getAllStores(credentialsDto);
         if (response.getStatusCode().isError())
-            throw new ResponseStatusException(response.getStatusCode(), (String) response.getBody());
+            throw new ResponseStatusException(response.getStatusCode(), "Something went wrong, it is fallback.");
         log.debug("Request sent\nStatus code is: {}", response.getStatusCode());
-        return (StoreListDto) response.getBody();
+        return response.getBody();
     }
 
     public StoreDto getMyStoreRequest(StoreKeeperCredentialsDto credentialsDto) {
-        ResponseEntity<Object> response = storeFeignClient.getMyStore(credentialsDto);
+        ResponseEntity<StoreDto> response = storeFeignClient.getMyStore(credentialsDto);
         if (response.getStatusCode().isError())
-            throw new ResponseStatusException(response.getStatusCode(), (String) response.getBody());
+            throw new ResponseStatusException(response.getStatusCode(), "Something went wrong, it is fallback.");
         log.debug("Request sent\nStatus code is: {}", response.getStatusCode());
-        return (StoreDto) response.getBody();
+        return response.getBody();
     }
 
     public StoreDto getOneStoreRequest(String code, StoreKeeperCredentialsDto credentialsDto) {
-        ResponseEntity<Object> response = storeFeignClient.getOneStore(code, credentialsDto);
+        ResponseEntity<StoreDto> response = storeFeignClient.getOneStore(code, credentialsDto);
         if (response.getStatusCode().isError())
-            throw new ResponseStatusException(response.getStatusCode(), (String) response.getBody());
+            throw new ResponseStatusException(response.getStatusCode(), "Something went wrong, it is fallback.");
         log.debug("Request sent\nStatus code is: {}", response.getStatusCode());
-        return (StoreDto) response.getBody();
+        return response.getBody();
     }
 
     public String isStoreKeeperFromStoreRequest(StoreKeeperCredentialsDto credentialsDto) {
         ResponseEntity<String> response = storeFeignClient.isStoreKeeperFromStore(credentialsDto);
         if (response.getStatusCode().isError())
-            throw new ResponseStatusException(response.getStatusCode(), response.getBody());
+            throw new ResponseStatusException(response.getStatusCode(), "Something went wrong, it is fallback.");
         log.debug("Request sent\nStatus code is: {}", response.getStatusCode());
         return response.getBody();
     }

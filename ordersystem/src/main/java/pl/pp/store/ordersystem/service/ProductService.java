@@ -21,7 +21,9 @@ public class ProductService {
     private final StoreFeignClientImpl storeFeignClient;
 
     public void addProduct(ProductDto productDto) {
-        productRepository.findByCode(productDto.getCode()).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Product with that code exists, code must be unique."));
+        if (productRepository.findByCode(productDto.getCode()).isPresent()){
+                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Product with that code exists, code must be unique.");
+        }
         productRepository.save(productDto.toDomain());
     }
 

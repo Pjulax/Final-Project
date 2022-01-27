@@ -28,7 +28,7 @@ public class ReportService {
         try {
             PdfPTable table = new PdfPTable(3);
             table.setWidthPercentage(60);
-            table.setWidths(new int[]{1, 3, 3});
+            table.setWidths(new int[]{2, 3, 1});
 
             Font headFont = FontFactory.getFont(FontFactory.TIMES_ROMAN);
 
@@ -126,7 +126,7 @@ public class ReportService {
 
                 PdfPTable table = new PdfPTable(3);
                 table.setWidthPercentage(60);
-                table.setWidths(new int[]{1, 3, 3});
+                table.setWidths(new int[]{2, 3, 1});
 
                 PdfPCell hcell;
                 hcell = new PdfPCell(new Phrase("Code", headFont));
@@ -209,7 +209,7 @@ public class ReportService {
 
             PdfPTable table = new PdfPTable(3);
             table.setWidthPercentage(60);
-            table.setWidths(new int[]{1, 3, 3});
+            table.setWidths(new int[]{2, 3, 1});
 
             PdfPCell hcell;
             hcell = new PdfPCell(new Phrase("Code", headFont));

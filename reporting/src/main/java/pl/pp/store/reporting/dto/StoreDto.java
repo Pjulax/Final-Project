@@ -2,13 +2,15 @@ package pl.pp.store.reporting.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class StoreDto {
-    private final String name;
-    private final String localization;
-    private final String code;
+    private String name;
+    private String localization;
+    private String code;
 
     @Override
     public String toString() {

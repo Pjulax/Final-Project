@@ -1,14 +1,18 @@
 package pl.pp.store.store.dto;
 
+import io.swagger.v3.oas.annotations.Parameter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
 public class StoreKeeperCredentialsDto {
-    private String storeCode;
-    private String login;
-    private String password;
+    @Parameter(description = "Store identifier, has 6 characters.", example = "ABCD12")
+    private final String storeCode;
+    @Parameter(description = "Storekeeper login.", example = "Storekeeper1")
+    private final String login;
+    @Parameter(description = "Storekeeper password.", example = "password123")
+    private final String password;
 
     @Override
     public String toString() {

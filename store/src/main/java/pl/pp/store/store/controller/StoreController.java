@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.pp.store.store.dto.*;
@@ -28,36 +29,37 @@ public class StoreController {
     @PostMapping("/add")
     public ResponseEntity<String> addStore(@RequestBody AddStoreDto addStoreDto) {
         storeService.addStore(addStoreDto);
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok("Ok");
     }
 
-    @Operation(summary = "Add a store to database")
+    @Operation(summary = "Get all stores information")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully got stores list"),
             @ApiResponse(responseCode = "403", description = "Not found store and user to authorize. Access forbidden.")
     })
     @GetMapping("/all")
-    public ResponseEntity<StoreListDto> getAllStores(@RequestBody StoreKeeperCredentialsDto credentialsDto) {
+    public ResponseEntity<StoreListDto> getAllStores(@ParameterObject StoreKeeperCredentialsDto credentialsDto) {
         return ResponseEntity.ok(storeService.getAllStores(credentialsDto));
     }
 
-    @Operation(summary = "Get my store informations")
+    @Operation(summary = "Get my store information")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully added store"),
             @ApiResponse(responseCode = "403", description = "Not found store and user. Access forbidden.")
     })
     @GetMapping("/my")
-    public ResponseEntity<StoreDto> getMyStore(@RequestBody StoreKeeperCredentialsDto credentialsDto) {
+    public ResponseEntity<StoreDto> getMyStore(@ParameterObject StoreKeeperCredentialsDto credentialsDto) {
         return ResponseEntity.ok(storeService.getMyStore(credentialsDto));
     }
 
-    @Operation(summary = "Add a store to database")
+    @Operation(summary = "Get information of the store with specific code")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully added store"),
-            @ApiResponse(responseCode = "400", description = "Not found store with that code.")
+            @ApiResponse(responseCode = "400", description = "Not found store with that code."),
+            @ApiResponse(responseCode = "403", description = "Not found store and user to authorize. Access forbidden.")
     })
     @GetMapping(value = "/{code}")
-    public ResponseEntity<StoreDto> getOneStore(@PathVariable(name = "code") String code, @RequestBody StoreKeeperCredentialsDto credentialsDto) {
+    public ResponseEntity<StoreDto> getOneStore(@PathVariable(name = "code") String code, @ParameterObject StoreKeeperCredentialsDto credentialsDto) {
         log.info(credentialsDto.toString());
         return ResponseEntity.ok(storeService.getOneStore(code, credentialsDto));
     }
@@ -74,23 +76,23 @@ public class StoreController {
         return ResponseEntity.ok("Ok");
     }
 
-    @Operation(summary = "Get my info as Storekeeper")
+    @Operation(summary = "Get my info as a storekeeper")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully got info"),
             @ApiResponse(responseCode = "403", description = "Not found store and user to authorize. Access forbidden.")
     })
     @GetMapping("/storekeeper/me")
-    public ResponseEntity<StoreKeeperDataDto> getMyStoreKeeperData(@RequestBody StoreKeeperCredentialsDto credentialsDto) {
+    public ResponseEntity<StoreKeeperDataDto> getMyStoreKeeperData(@ParameterObject StoreKeeperCredentialsDto credentialsDto) {
         return ResponseEntity.ok(storeKeeperService.getMyInfo(credentialsDto));
     }
 
-    @Operation(summary = "Authorize Storekeeper")
+    @Operation(summary = "Authorize a storekeeper")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully authorized"),
             @ApiResponse(responseCode = "403", description = "Not found store and user to authorize. Access forbidden.")
     })
     @GetMapping("/storekeeper/auth")
-    public ResponseEntity<String> isStoreKeeperFromStore(@RequestBody StoreKeeperCredentialsDto credentialsDto) {
+    public ResponseEntity<String> isStoreKeeperFromStore(@ParameterObject StoreKeeperCredentialsDto credentialsDto) {
         storeService.authorize(credentialsDto);
         return ResponseEntity.ok("Ok");
     }

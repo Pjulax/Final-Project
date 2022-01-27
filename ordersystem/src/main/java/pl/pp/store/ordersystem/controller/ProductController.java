@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
+import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.pp.store.ordersystem.dto.ProductDto;
@@ -30,13 +31,13 @@ public class ProductController {
         return ResponseEntity.ok("Ok");
     }
 
-    @Operation(summary = "")
+    @Operation(summary = "Get all products information")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Successfully added store"),
-            @ApiResponse(responseCode = "403", description = "Store with that code already exists or storekeeper with that login doesn't exist.")
+            @ApiResponse(responseCode = "200", description = "Successfully provided information about products"),
+            @ApiResponse(responseCode = "403", description = "Not found store and user to authorize. Access forbidden.")
     })
     @GetMapping("/all")
-    public ResponseEntity<ProductsListDto> getAllProducts(@RequestBody StoreKeeperCredentialsDto storeKeeperCredentialsDto) {
+    public ResponseEntity<ProductsListDto> getAllProducts(@ParameterObject StoreKeeperCredentialsDto storeKeeperCredentialsDto) {
         return ResponseEntity.ok(productService.getAllProducts(storeKeeperCredentialsDto));
     }
 }

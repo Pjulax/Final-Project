@@ -56,7 +56,7 @@ spring:
 logging:
   level:
     org:
-      springframework: info
+      springframework: debug
 
 springdoc:
   swagger-ui:

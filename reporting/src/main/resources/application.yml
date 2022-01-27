@@ -13,7 +13,7 @@ spring:
 logging:
   level:
     org:
-      springframework: info
+      springframework: debug
 
 server:
   port: 8764
@@ -45,6 +45,11 @@ management:
     readinessstate:
       enabled: true
 
+feign:
+  circuitbreaker:
+    enabled: true
+    group:
+      enabled: true
 ---
 spring:
   config:

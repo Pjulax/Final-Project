@@ -2,8 +2,6 @@ package pl.pp.store.store.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import pl.pp.store.store.model.StoreKeeper;
 
 @Data

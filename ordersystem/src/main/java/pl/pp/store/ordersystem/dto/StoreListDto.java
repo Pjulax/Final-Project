@@ -1,14 +1,14 @@
 package pl.pp.store.ordersystem.dto;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
-@RequiredArgsConstructor
-@Getter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class StoreListDto {
-    private final List<StoreDto> storeList;
+    private List<StoreDto> storeList;
 
     @Override
     public String toString() {

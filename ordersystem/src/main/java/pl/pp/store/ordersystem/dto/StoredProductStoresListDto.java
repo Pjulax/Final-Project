@@ -3,6 +3,8 @@ package pl.pp.store.ordersystem.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 import pl.pp.store.ordersystem.model.CategoryType;
 import pl.pp.store.ordersystem.model.StoredProduct;
 
@@ -24,8 +26,11 @@ public class StoredProductStoresListDto {
         for (String storeKey : storeKeys) {
             if(storedProducts.get(storeKey) != null)
                 storeProductsQuantityList.add(new StoreProductsQuantityDto(storeDtos.get(storeKey).getName(), storeDtos.get(storeKey).getCode(), storedProducts.get(storeKey).getQuantity()));
-            storeProductsQuantityList.add(new StoreProductsQuantityDto(storeDtos.get(storeKey).getName(), storeDtos.get(storeKey).getCode(), 0L));
+            else
+                storeProductsQuantityList.add(new StoreProductsQuantityDto(storeDtos.get(storeKey).getName(), storeDtos.get(storeKey).getCode(), 0L));
         }
+        if (storeProductsQuantityList.isEmpty())
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No products stored");
         return new StoredProductStoresListDto(
                 storedProducts.get(storeKeys[0]).getProduct().getName(),
                 storedProducts.get(storeKeys[0]).getProduct().getCategory(),

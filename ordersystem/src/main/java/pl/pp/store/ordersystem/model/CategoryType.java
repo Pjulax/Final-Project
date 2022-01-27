@@ -12,7 +12,7 @@ public enum CategoryType {
     ALCOHOL("Alcohol"),
     CLOTHING("Clothing"),
     CONFECTIONERY("Confectionery"),
-    ELECTRONICS("Electornics"),
+    ELECTRONICS("Electronics"),
     CLEANING("Cleaning"),
     @JsonEnumDefaultValue
     UNKNOWN("Unknown");

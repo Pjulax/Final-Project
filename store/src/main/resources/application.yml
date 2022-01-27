@@ -18,7 +18,7 @@ spring:
 logging:
   level:
     org:
-      springframework: info
+      springframework: debug
 
 server:
   port: 8763
@@ -67,7 +67,7 @@ spring:
     url: jdbc:postgresql://${DB_HOST}:5432/${DB_NAME}
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
   autoconfigure:
     exclude: org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration
 
