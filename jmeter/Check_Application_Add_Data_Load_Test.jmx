@@ -27,6 +27,7 @@
         <stringProp name="TestPlan.comments">Virtual Users Running Scenario 1. 
 Make test last 1 minute (see Scheduler)</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <boolProp name="ThreadGroup.delayedStart">true</boolProp>
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Store and Storekeeper Data Set Config" enabled="true">
@@ -593,7 +594,7 @@ Connect to 5s</stringProp>
         <TestAction guiclass="TestActionGui" testclass="TestAction" testname="ThinkTime1s" enabled="false">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
-          <stringProp name="ActionProcessor.duration">0</stringProp>
+          <stringProp name="ActionProcessor.duration">1000</stringProp>
         </TestAction>
         <hashTree>
           <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="URT" enabled="true">
